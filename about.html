@@ -3,26 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Git & GitHub Assignment</title>
+    <title>MyPortfolio - About</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #333; }
+        header { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.8rem; letter-spacing: 1px; }
+        nav a { color: #a8d8ea; text-decoration: none; margin-left: 20px; font-size: 1rem; }
+        nav a:hover { color: #fff; }
+        .about-hero { background: linear-gradient(135deg, #11998e, #38ef7d); color: white; text-align: center; padding: 60px 20px; }
+        .about-hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .about-hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .about-content { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        .about-content h3 { color: #667eea; font-size: 1.5rem; margin: 30px 0 15px; }
+        .about-content p { line-height: 1.8; color: #555; margin-bottom: 15px; }
+        .feature-section { background: white; border-radius: 10px; padding: 30px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .feature-section h3 { color: #1a1a2e; font-size: 1.4rem; margin-bottom: 15px; border-left: 4px solid #667eea; padding-left: 12px; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 8px 0; color: #555; }
+        .feature-list li::before { content: "✔ "; color: #667eea; font-weight: bold; }
+        .contact-section { background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; padding: 50px 20px; margin-top: 50px; border-radius: 10px; }
+        .contact-section h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .contact-section p { font-size: 1rem; }
+        footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 20px; margin-top: 50px; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>About This Project</h1>
+        <h1>&#128187; MyPortfolio</h1>
         <nav>
-            <a href="index.html">Home</a> | 
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
         </nav>
     </header>
-    <main>
-        <p>This repository demonstrates branching, merging, commit management, and remote repository integration.</p>
-        <section id="features">
-            <h2>Key Features</h2>
-            <ul>
-                <li>Version control with Git</li>
-                <li>Isolated feature branches</li>
-                <li>Safe merge strategies</li>
+
+    <section class="about-hero">
+        <h2>About This Project</h2>
+        <p>A demonstration of Git version control, GitHub integration, and professional web development practices.</p>
+    </section>
+
+    <div class="about-content">
+
+        <div class="feature-section">
+            <h3>&#128218; Project Overview</h3>
+            <p>This project is a college assignment demonstrating the complete Git and GitHub workflow. It covers repository initialization, commit management, branching strategies, merge operations, and remote repository integration.</p>
+            <p>The project follows industry-standard version control practices used by professional development teams worldwide.</p>
+        </div>
+
+        <div class="feature-section">
+            <h3>&#127380; Key Features Demonstrated</h3>
+            <ul class="feature-list">
+                <li>Local Git repository initialization with <code>git init</code></li>
+                <li>Staged commits using <code>git add</code> and <code>git commit</code></li>
+                <li>Feature branch creation and isolation</li>
+                <li>Branch switching with <code>git checkout</code> / <code>git switch</code></li>
+                <li>Merging feature branches into main using <code>git merge</code></li>
+                <li>Ignoring files with <code>.gitignore</code></li>
+                <li>Undoing commits safely with <code>git revert</code></li>
+                <li>Remote repository integration with GitHub</li>
+                <li>Pushing to a public GitHub repository</li>
             </ul>
-        </section>
-    </main>
+        </div>
+
+        <div class="feature-section">
+            <h3>&#9881; New Feature Section (Added on Feature Branch)</h3>
+            <p>This section was added on the <strong>feature</strong> branch to demonstrate isolated feature development. Changes made on a feature branch do not affect the main branch until they are explicitly merged.</p>
+            <p>Feature branches allow developers to work on new functionality in isolation, test it thoroughly, and only merge it into the main codebase when it is ready. This is a core best practice in modern software development.</p>
+            <ul class="feature-list">
+                <li>Isolated development without breaking main branch</li>
+                <li>Parallel development across multiple team members</li>
+                <li>Clean commit history per feature</li>
+                <li>Easy rollback if a feature introduces bugs</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <h3>&#128222; Get In Touch</h3>
+            <p>Interested in collaborating? Feel free to reach out through GitHub!</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MyPortfolio. All rights reserved. | Git &amp; GitHub Assignment</p>
+    </footer>
 </body>
 </html>

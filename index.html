@@ -3,19 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git & GitHub Assignment</title>
+    <title>MyPortfolio - Home</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #333; }
+        header { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.8rem; letter-spacing: 1px; }
+        nav a { color: #a8d8ea; text-decoration: none; margin-left: 20px; font-size: 1rem; }
+        nav a:hover { color: #fff; }
+        .hero { background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; padding: 80px 20px; }
+        .hero h2 { font-size: 2.8rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; line-height: 1.6; }
+        .btn { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+        .features { display: flex; justify-content: center; gap: 30px; padding: 60px 40px; flex-wrap: wrap; }
+        .card { background: white; border-radius: 10px; padding: 30px; width: 260px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+        .card h3 { color: #667eea; margin-bottom: 10px; font-size: 1.3rem; }
+        .card p { color: #666; line-height: 1.6; }
+        .skills { background: #fff; padding: 50px 40px; text-align: center; }
+        .skills h2 { font-size: 2rem; color: #1a1a2e; margin-bottom: 30px; }
+        .skill-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .tag { background: #667eea; color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.95rem; }
+        footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 20px; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Git & GitHub Assignment</h1>
+        <h1>&#128187; MyPortfolio</h1>
         <nav>
-            <a href="index.html">Home</a> | 
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
         </nav>
     </header>
-    <main>
-        <p>This project demonstrates standard Git version control and GitHub workflows.</p>
-        <p>Updated content: Git makes tracking code changes seamless and efficient.</p>
-    </main>
+
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I am a passionate software developer building clean, modern, and efficient web applications. I specialize in version control, collaborative development, and writing maintainable code.</p>
+        <a href="about.html" class="btn">Learn More About Me</a>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <h3>&#128187; Web Development</h3>
+            <p>Building responsive and accessible websites using HTML, CSS, and JavaScript best practices.</p>
+        </div>
+        <div class="card">
+            <h3>&#9881; Version Control</h3>
+            <p>Proficient with Git and GitHub for collaborative and solo project management and CI/CD workflows.</p>
+        </div>
+        <div class="card">
+            <h3>&#128218; Clean Code</h3>
+            <p>Writing readable, maintainable, and well-documented code following industry best practices.</p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Python</span>
+            <span class="tag">VS Code</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MyPortfolio. All rights reserved. | Built with HTML &amp; CSS</p>
+    </footer>
 </body>
 </html>
