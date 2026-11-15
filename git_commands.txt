@@ -1,0 +1,180 @@
+====================================================================
+  GIT COMMANDS USED IN THIS ASSIGNMENT - COMPLETE REFERENCE
+====================================================================
+Author  : MohitaGurram66
+Email   : mohitagurram12@gmail.com
+Date    : November 15, 2026
+Project : Git_GitHub_Assignment
+====================================================================
+
+--------------------------------------------------------------------
+SECTION 1: REPOSITORY INITIALIZATION & CONFIGURATION
+--------------------------------------------------------------------
+
+COMMAND: git init
+EXPLANATION: Initializes a new, empty Git repository in the current
+             folder. Creates a hidden .git directory to store all
+             version control data.
+
+COMMAND: git config --global user.name "MohitaGurram66"
+EXPLANATION: Sets the global Git username used to identify the
+             author of every commit across all repositories.
+
+COMMAND: git config --global user.email "mohitagurram12@gmail.com"
+EXPLANATION: Sets the global Git email address associated with
+             commits. This email links commits to a GitHub account.
+
+--------------------------------------------------------------------
+SECTION 2: STAGING AND INITIAL COMMIT
+--------------------------------------------------------------------
+
+COMMAND: git add index.html about.html
+EXPLANATION: Stages specific files for the next commit. Git tracks
+             only files that have been staged with git add.
+
+COMMAND: git add .
+EXPLANATION: Stages ALL modified and new files in the current
+             directory and subdirectories at once.
+
+COMMAND: git commit -m "Initial commit - Add HTML files"
+EXPLANATION: Creates the first commit (snapshot) with a descriptive
+             message. The -m flag allows the message inline.
+
+--------------------------------------------------------------------
+SECTION 3: MODIFYING FILES AND SECOND COMMIT
+--------------------------------------------------------------------
+
+COMMAND: git add index.html
+EXPLANATION: Stages only the modified index.html file so only that
+             file is included in the next commit.
+
+COMMAND: git commit -m "Update index.html"
+EXPLANATION: Saves the second commit, recording the update to
+             index.html with a clear, descriptive message.
+
+--------------------------------------------------------------------
+SECTION 4: BRANCH CREATION AND SWITCHING
+--------------------------------------------------------------------
+
+COMMAND: git branch feature
+EXPLANATION: Creates a new branch named "feature" that starts at
+             the same commit as the current branch (main).
+
+COMMAND: git checkout feature
+EXPLANATION: Switches the working directory to the "feature" branch.
+             All new commits will now be recorded on this branch.
+
+COMMAND: git switch feature
+EXPLANATION: Modern alternative to git checkout for switching
+             branches. Recommended in Git 2.23 and later versions.
+
+--------------------------------------------------------------------
+SECTION 5: FEATURE BRANCH COMMIT
+--------------------------------------------------------------------
+
+COMMAND: git add about.html
+EXPLANATION: Stages the modified about.html file on the feature
+             branch, preparing it for the next commit.
+
+COMMAND: git commit -m "Add feature to about page"
+EXPLANATION: Records the new feature section added to about.html
+             as a commit on the feature branch.
+
+--------------------------------------------------------------------
+SECTION 6: SWITCHING BACK AND MERGING
+--------------------------------------------------------------------
+
+COMMAND: git checkout main
+EXPLANATION: Switches back to the main branch from the feature
+             branch. The working directory updates accordingly.
+
+COMMAND: git switch main
+EXPLANATION: Modern alternative to switch back to the main branch.
+
+COMMAND: git merge feature
+EXPLANATION: Merges all commits from the "feature" branch into the
+             current branch (main). Creates a merge commit in the
+             history.
+
+COMMAND: git merge feature -m "Merge feature branch into main"
+EXPLANATION: Same as above but specifies a custom merge commit
+             message for clarity in the commit history.
+
+--------------------------------------------------------------------
+SECTION 7: .GITIGNORE VERIFICATION
+--------------------------------------------------------------------
+
+COMMAND: git status
+EXPLANATION: Shows the current state of the working directory and
+             staging area. Displays tracked, untracked, and ignored
+             files. Used to verify .gitignore is working correctly.
+
+COMMAND: git check-ignore -v debug.log
+EXPLANATION: Verifies which .gitignore rule is causing a specific
+             file to be ignored. Useful for debugging ignore rules.
+
+--------------------------------------------------------------------
+SECTION 8: UNDO OPERATION USING GIT REVERT
+--------------------------------------------------------------------
+
+COMMAND: git add index.html
+EXPLANATION: Stages the temporary change made to index.html for the
+             undo demonstration commit.
+
+COMMAND: git commit -m "Temporary change for undo demonstration"
+EXPLANATION: Records the temporary change as a commit that will
+             later be reverted to show the undo workflow.
+
+COMMAND: git revert HEAD --no-edit
+EXPLANATION: Creates a NEW commit that reverses the changes from
+             the most recent commit (HEAD). Preserves the full
+             commit history without deleting any commits. The
+             --no-edit flag skips the editor prompt.
+
+--------------------------------------------------------------------
+SECTION 9: VIEWING HISTORY AND STATUS
+--------------------------------------------------------------------
+
+COMMAND: git log --oneline
+EXPLANATION: Displays the commit history in a compact format with
+             one line per commit, showing commit hash and message.
+
+COMMAND: git log --oneline --graph --all
+EXPLANATION: Displays the full commit history as an ASCII graph,
+             showing all branches and their relationships visually.
+
+COMMAND: git log --pretty=format:"%h %s %ad" --date=short
+EXPLANATION: Displays commit history with custom formatting showing
+             hash, subject, and date in a readable format.
+
+--------------------------------------------------------------------
+SECTION 10: GITHUB REMOTE INTEGRATION
+--------------------------------------------------------------------
+
+COMMAND: git remote add origin https://github.com/MohitaGurram66/Git_GitHub_Assignment.git
+EXPLANATION: Links the local repository to a remote GitHub
+             repository. "origin" is the conventional alias for
+             the primary remote.
+
+COMMAND: git remote -v
+EXPLANATION: Lists all configured remote repositories with their
+             URLs for fetch and push operations. Used to verify the
+             remote was added correctly.
+
+COMMAND: git branch -M main
+EXPLANATION: Renames the current branch to "main". Ensures the
+             branch name matches GitHub's default branch name.
+
+COMMAND: git push -u origin main
+EXPLANATION: Pushes the local main branch to the remote origin.
+             The -u flag sets "origin main" as the default upstream,
+             so future pushes only need "git push".
+
+COMMAND: git branch -a
+EXPLANATION: Lists all branches — both local and remote-tracking
+             branches. Used to verify that the push was successful
+             and the remote branch exists.
+
+====================================================================
+END OF GIT COMMANDS REFERENCE
+====================================================================
