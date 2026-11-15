@@ -1,0 +1,133 @@
+====================================================================
+  LOGIN SYSTEM - TEST CASE DESIGN
+  Subject: Software Testing | Question 2
+  Author : MohitaGurram66
+  Date   : November 15, 2026
+====================================================================
+
+APPLICATION: Login System
+INPUTS: Username, Password, Login Button
+
+FUNCTIONAL REQUIREMENTS:
+  FR-01: Username must not be empty.
+  FR-02: Password must contain at least 6 characters.
+  FR-03: Correct credentials should allow successful login.
+  FR-04: Invalid credentials should display a clear error message.
+  FR-05: After 3 consecutive failed attempts, the account is locked.
+
+====================================================================
+TEST CASE TABLE
+====================================================================
+
+TC_01 | Valid username and valid password
+-----------------------------------------------------------------------
+Input Data    : Username = "alice123"  |  Password = "SecurePass1"
+Expected Output: Login successful. User is redirected to the dashboard.
+                 Welcome message displayed: "Welcome, alice123!"
+Test Type     : Positive / Happy Path
+
+TC_02 | Empty username
+-----------------------------------------------------------------------
+Input Data    : Username = ""  |  Password = "SecurePass1"
+Expected Output: Login fails. Error message displayed:
+                 "Username is required"
+                 Focus returns to the username field.
+Test Type     : Negative / Validation
+
+TC_03 | Empty password
+-----------------------------------------------------------------------
+Input Data    : Username = "alice123"  |  Password = ""
+Expected Output: Login fails. Error message displayed:
+                 "Password is required"
+                 Focus returns to the password field.
+Test Type     : Negative / Validation
+
+TC_04 | Both username and password empty
+-----------------------------------------------------------------------
+Input Data    : Username = ""  |  Password = ""
+Expected Output: Login fails. Two error messages displayed:
+                 "Username is required"
+                 "Password is required"
+                 Form submission is blocked.
+Test Type     : Negative / Validation
+
+TC_05 | Password with fewer than 6 characters
+-----------------------------------------------------------------------
+Input Data    : Username = "alice123"  |  Password = "abc"
+Expected Output: Login fails. Error message displayed:
+                 "Password must be at least 6 characters"
+                 Login button action is blocked.
+Test Type     : Negative / Boundary
+
+TC_06 | Password with exactly 6 characters
+-----------------------------------------------------------------------
+Input Data    : Username = "alice123"  |  Password = "abc123"
+Expected Output: If credentials are correct: Login successful.
+                 If password is wrong: "Invalid username or password"
+                 Boundary condition passes (6-char minimum is met).
+Test Type     : Boundary / Edge Case
+
+TC_07 | Invalid (non-existent) username
+-----------------------------------------------------------------------
+Input Data    : Username = "unknownuser99"  |  Password = "SecurePass1"
+Expected Output: Login fails. Error message displayed:
+                 "Invalid username or password"
+                 (Generic message used to prevent user enumeration.)
+Test Type     : Negative / Security
+
+TC_08 | Invalid password (correct username, wrong password)
+-----------------------------------------------------------------------
+Input Data    : Username = "alice123"  |  Password = "WrongPass99"
+Expected Output: Login fails. Error message displayed:
+                 "Invalid username or password"
+                 Failed attempt counter increments by 1.
+Test Type     : Negative / Authentication
+
+TC_09 | Three consecutive failed login attempts
+-----------------------------------------------------------------------
+Input Data    :
+  Attempt 1 - Username = "alice123"  |  Password = "wrong1"
+  Attempt 2 - Username = "alice123"  |  Password = "wrong2"
+  Attempt 3 - Username = "alice123"  |  Password = "wrong3"
+Expected Output:
+  After Attempt 1: "Invalid username or password" (1 of 3 failed)
+  After Attempt 2: "Invalid username or password" (2 of 3 failed)
+  After Attempt 3: "Account locked after 3 failed attempts.
+                    Please contact support or try again later."
+  Account is now in a LOCKED state.
+Test Type     : Negative / Account Lockout
+
+TC_10 | Login attempt after account is locked
+-----------------------------------------------------------------------
+Input Data    : Username = "alice123"  |  Password = "SecurePass1"
+               (Correct credentials, but account is locked)
+Expected Output: Login fails despite correct credentials.
+                 Error message displayed:
+                 "Account locked after 3 failed attempts.
+                  Please contact support or try again later."
+                 No session is created. User cannot log in.
+Test Type     : Negative / Account Lockout
+
+====================================================================
+BONUS TEST CASES
+====================================================================
+
+TC_11 | Username with special characters
+-----------------------------------------------------------------------
+Input Data    : Username = "alice@123!"  |  Password = "SecurePass1"
+Expected Output: Login fails if special characters are not allowed.
+                 Error: "Invalid username or password"
+                 OR system handles it gracefully without crashing.
+Test Type     : Negative / Input Validation
+
+TC_12 | SQL Injection attempt in username field
+-----------------------------------------------------------------------
+Input Data    : Username = "' OR '1'='1"  |  Password = "anypass"
+Expected Output: Login fails. System does not expose database errors.
+                 Error: "Invalid username or password"
+                 System is NOT vulnerable to SQL injection.
+Test Type     : Security / Penetration
+
+====================================================================
+END OF TEST CASE DOCUMENT
+====================================================================
